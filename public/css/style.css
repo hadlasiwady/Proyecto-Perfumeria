@@ -1,84 +1,155 @@
 @import url("colors.css");
 @import url("grid.css");
 @import url("form.css");
-*{
+* {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size:100%;
-  font-size:16px;
-  font-size:1em;
-  margin:0px;
-  padding:0px;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--primary_bg);
-  color: var(--primary_text);
-  padding:0px;
-  flex-wrap: wrap;
-}
-header h1{
-  margin:0px;
-  padding:0.75rem 1rem;
-  font-size: 1.5rem;
-}
-header nav ul{
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  padding:0px;
-  list-style: none;
-  margin:0px;
-}
-header ul li a, header ul li span{
-  display: flex;
-  padding:1rem;
-  color:var(--primary_text);
-  text-decoration: none;
-  transition: background-color 0.5s ease;
-}
-header ul li a:hover{
-  background-color: var(--primary_bg300);
-  transition: background-color 0.5s ease;
-}
-.WWList table{
-  width:100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  font-size: 16px;
+  font-size: 1em;
   margin: 0px;
-  -webkit-border-horizontal-spacing:0px;
-  -webkit-border-vertical-spacing:0px;
+  padding: 0px;
 }
 
-.WWList table thead{
+.BarraLateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding-left: 10px;
+
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  border-bottom-right-radius: 45px;
+  border-top-right-radius: 45px;
+  box-shadow: 2px 2px 15px 1px rgba(216, 216, 216, 0.556);
+  padding-top: 50px;
+
+  display: grid;
+  grid-template-rows: 30% 20%;
+  align-items: center;
+}
+
+.BarraLateral.close {
+  width: 150px;
+}
+
+.BarraLateral .iconClose {
+  cursor: pointer;
+  position: absolute;
+  top: 7.5%;
+  right: -18px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 19px;
+  width: 19px;
+  padding: 8px;
+  background-color: #6b9af7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.BarraLateral.close .iconClose {
+  transform: translateY(-50%);
+}
+
+.BarraLateral.close ~ .contPrincipal {
+  left: 140px;
+  width: calc(97.3% - 88px);
+  height: 100vh;
+
+  background-color: #f8f2ee;
+  opacity: 0.1;
+  background-image: linear-gradient(135deg, #000000 25%, transparent 25%),
+    linear-gradient(225deg, #000000 25%, transparent 25%),
+    linear-gradient(45deg, #000000 25%, transparent 25%),
+    linear-gradient(315deg, #000000 25%, #f8f2ee 25%);
+  background-position: 4px 0, 4px 0, 0 0, 0 0;
+  background-size: 4px 4px;
+  background-repeat: repeat;
+}
+
+.BarraLateral h1 {
+  margin-top: 20%;
+  font-size: 1.5rem;
+  color: black;
+  text-align: center;
+}
+.BarraLateral nav ul {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: repeat(4, 50px);
+  grid-gap: 10px;
+  margin-left: -20px;
+}
+
+.BarraLateral ul li {
+  list-style: none;
+}
+
+.BarraLateral ul li a {
+  border-radius: 25px;
+  display: flex;
+  padding: 1rem;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.5s;
+
+  display: grid;
+  grid-template-columns: 20% 75%;
+  align-items: center;
+}
+
+.BarraLateral ul li a i {
+  font-size: 18px;
+}
+
+.BarraLateral ul li a:hover {
+  background-color: rgb(18, 18, 18);
+  color: white;
+}
+
+.WWList table {
+  width: 100%;
+  margin: 0px;
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+}
+
+.WWList table thead {
   background-color: #888;
 }
 
-.WWList table thead th, .WWList table tbody td{
-  padding:0.35em 0.5em;
+.WWList table thead th,
+.WWList table tbody td {
+  padding: 0.35em 0.5em;
   margin: 0px;
   border: 0px;
 }
 
-.WWList table tbody tr:nth-child(2n){
+.WWList table tbody tr:nth-child(2n) {
   background-color: #c4c4c4;
 }
 main {
   position: relative;
-  padding:1em;
+  padding: 1em;
   min-height: calc(100vh - 154px);
 }
-footer{
+footer {
   background-color: var(--primary_bg);
-  color:var(--primary_text);
-  display:flex;
+  color: var(--primary_text);
+  display: flex;
   justify-content: center;
-  align-items:center;
-  padding:1rem;
+  align-items: center;
+  padding: 1rem;
 }
 /*
 --sm: 640px;
@@ -88,44 +159,44 @@ footer{
   --xxl: 1536px;
 */
 
-.depth-0{
+.depth-0 {
   box-shadow: 0px 0px 3px var(--primary_bg);
 }
-.depth-1{
+.depth-1 {
   box-shadow: 1px 1px 3px var(--primary_bg);
 }
-.depth-2{
+.depth-2 {
   box-shadow: 3px 3px 5px var(--primary_bg);
 }
-.depth-3{
+.depth-3 {
   box-shadow: 3px 3px 7px var(--primary_bg);
 }
 
-.py-0{
-  padding-top:0rem !important;
-  padding-bottom:0rem !important;
+.py-0 {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
-.py-1{
-  padding-top:0.1rem !important;
-  padding-bottom:0.1rem !important;
-}
-
-.py-2{
-  padding-top:0.25rem !important;
-  padding-bottom:0.25rem !important;
+.py-1 {
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
 }
 
-.py-3{
-  padding-top:0.5rem !important;
-  padding-bottom:0.5rem !important;
+.py-2 {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
 }
-.py-4{
-  padding-top:1rem !important;
-  padding-bottom:1rem !important;
+
+.py-3 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
-.py-5{
-  padding-top:1.5rem !important;
-  padding-bottom:1.5rem !important;
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.py-5 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .right {
@@ -136,15 +207,14 @@ footer{
 }
 
 .error {
-  font-size:0.9rem;
+  font-size: 0.9rem;
   color: var(--alert);
 }
 
-@media (min-width: 640px){
-
+@media (min-width: 640px) {
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
   header {
     flex-direction: row;
   }
@@ -153,14 +223,15 @@ footer{
   }
 }
 
-@media (min-width: 1024px){
-  
+@media (min-width: 1024px) {
 }
 
-@media (min-width: 1280px){
-  
+@media (min-width: 1280px) {
 }
 
-@media (min-width: 1536){
-  
+@media (min-width: 1536) {
 }
+
+/* layout.view.tpl */
+
+/* layout.view.tpl */
