@@ -22,15 +22,20 @@ body {
 
   width: 300px;
   height: 100vh;
-  background-color: white;
+  background: rgb(64, 5, 227);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 5, 227, 1) 0%,
+    rgba(111, 0, 255, 1) 100%
+  );
   border-bottom-right-radius: 45px;
   border-top-right-radius: 45px;
-  box-shadow: 2px 2px 15px 1px rgba(216, 216, 216, 0.556);
-  padding-top: 50px;
+  box-shadow: 2px 2px 3px 2px rgb(221, 221, 221);
+  padding-top: 10px;
 
   display: grid;
-  grid-template-rows: 30% 20%;
-  align-items: center;
+  grid-template-rows: 13% 20%;
+  transition: 0.5s;
 }
 
 .BarraLateral.close {
@@ -43,10 +48,10 @@ body {
   top: 7.5%;
   right: -18px;
   transform: translateY(-50%) rotate(180deg);
-  height: 19px;
-  width: 19px;
+  height: 23px;
+  width: 23px;
   padding: 8px;
-  background-color: #6b9af7;
+  background-color: #ff6600;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,28 +64,105 @@ body {
   transform: translateY(-50%);
 }
 
-.BarraLateral.close ~ .contPrincipal {
-  left: 140px;
-  width: calc(97.3% - 88px);
-  height: 100vh;
+.BarraLateral .logo {
+  width: 95%;
+  height: 70px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
 
-  background-color: #f8f2ee;
-  opacity: 0.1;
-  background-image: linear-gradient(135deg, #000000 25%, transparent 25%),
-    linear-gradient(225deg, #000000 25%, transparent 25%),
-    linear-gradient(45deg, #000000 25%, transparent 25%),
-    linear-gradient(315deg, #000000 25%, #f8f2ee 25%);
-  background-position: 4px 0, 4px 0, 0 0, 0 0;
-  background-size: 4px 4px;
-  background-repeat: repeat;
+.BarraLateral.close .logo {
+  height: 75px;
+}
+
+.BarraLateral.close .logo {
+  width: 80%;
+}
+
+.BarraLateral .show {
+  color: white;
+  margin-top: 15px;
+}
+
+.BarraLateral.close .show {
+  display: none;
+}
+
+.BarraLateral .hidden {
+  display: none;
+  color: white;
+}
+
+.BarraLateral.close .hidden {
+  display: grid;
+  color: white;
+}
+
+.contPrincipal {
+  position: relative;
+  height: 100vh;
+  left: 269px;
+  width: calc(99% - 250px);
+  background-color: #f8f5f3;
+
+  transition: 0.5s ease;
+}
+
+.contPrincipal .cardHello {
+  position: relative;
+  top: 111px;
+  left: 100px;
+  width: 65%;
+  height: 300px;
+  background: rgb(224, 223, 225);
+  background: radial-gradient(
+    circle,
+    rgba(224, 223, 225, 1) 0%,
+    rgba(231, 231, 231, 1) 100%
+  );
+  border-radius: 25px;
+  box-shadow: 2px 2px 11px -3px rgba(133, 133, 133, 0.53);
+
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.contPrincipal .cardHello .imgSection {
+  width: 78%;
+  height: auto;
+  position: relative;
+  top: -50px;
+}
+
+.contPrincipal .cardHello h1 {
+  font-size: 45px;
+  color: rgb(34, 34, 34);
+  padding: 35px;
+}
+
+.BarraLateral.close ~ .contPrincipal {
+  left: 120px;
+  width: calc(98.3% - 88px);
+}
+
+.contPrincipal .contgrid {
+  width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-rows: repeat(1, 200px);
 }
 
 .BarraLateral h1 {
   margin-top: 20%;
-  font-size: 1.5rem;
-  color: black;
   text-align: center;
 }
+
+.BarraLateral #menu {
+  display: grid;
+  grid-template-rows: repeat(2, 680px);
+}
+
 .BarraLateral nav ul {
   width: 100%;
   height: auto;
@@ -98,22 +180,27 @@ body {
   border-radius: 25px;
   display: flex;
   padding: 1rem;
-  color: black;
+  color: white;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.5s;
+}
 
-  display: grid;
-  grid-template-columns: 20% 75%;
-  align-items: center;
+.BarraLateral.close ul li a {
+  border-radius: 15px;
 }
 
 .BarraLateral ul li a i {
   font-size: 18px;
 }
 
+.BarraLateral #menu .logout nav ul li {
+  border-top: 2px solid white;
+  padding-top: 10px;
+}
+
 .BarraLateral ul li a:hover {
-  background-color: rgb(18, 18, 18);
+  background-color: #ff6600;
   color: white;
 }
 
@@ -138,19 +225,35 @@ body {
 .WWList table tbody tr:nth-child(2n) {
   background-color: #c4c4c4;
 }
-main {
-  position: relative;
-  padding: 1em;
-  min-height: calc(100vh - 154px);
-}
+
 footer {
-  background-color: var(--primary_bg);
-  color: var(--primary_text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  position: relative;
+  height: 150px;
+  left: 269px;
+  width: calc(99% - 250px);
+  background: rgb(231, 231, 231);
+  padding: 50px;
+  text-align: center;
 }
+
+footer h1 {
+  font-size: 18px;
+  color: gray;
+  text-transform: uppercase;
+}
+
+footer hr {
+  width: 25%;
+  border: none;
+  height: 2px;
+  background-color: gray;
+}
+
+.BarraLateral.close ~ footer {
+  left: 130px;
+  width: calc(98.4% - 100px);
+}
+
 /*
 --sm: 640px;
   --md: 768px;
