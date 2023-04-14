@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 100%;
   font-size: 16px;
   font-size: 1em;
@@ -22,12 +22,13 @@ body {
 
   width: 300px;
   height: 100vh;
-  background: rgb(64, 5, 227);
+  background-color: #5d6769;
+  /* background: rgb(64, 5, 227);
   background: linear-gradient(
     90deg,
     rgba(64, 5, 227, 1) 0%,
     rgba(111, 0, 255, 1) 100%
-  );
+  ); */
   border-bottom-right-radius: 45px;
   border-top-right-radius: 45px;
   box-shadow: 2px 2px 3px 2px rgb(221, 221, 221);
@@ -102,8 +103,10 @@ body {
   height: 100vh;
   left: 269px;
   width: calc(99% - 250px);
-  background-color: #f8f5f3;
+  background-color: #edeeee;
 
+  display: grid;
+  grid-template-columns: 70% 28%;
   transition: 0.5s ease;
 }
 
@@ -111,34 +114,35 @@ body {
   position: relative;
   top: 111px;
   left: 100px;
-  width: 65%;
+  width: 96%;
   height: 300px;
-  background: rgb(224, 223, 225);
+  background-color: white;
+  /* background: rgb(224, 223, 225);
   background: radial-gradient(
     circle,
-    rgba(224, 223, 225, 1) 0%,
-    rgba(231, 231, 231, 1) 100%
-  );
+    rgb(212, 211, 212) 0%,
+    rgb(218, 217, 217) 100%
+  ); */
   border-radius: 25px;
-  box-shadow: 2px 2px 11px -3px rgba(133, 133, 133, 0.53);
+  box-shadow: 2px 2px 10px -3px rgba(119, 119, 119, 0.53);
 
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-  justify-content: center;
-  align-items: center;
 }
 
 .contPrincipal .cardHello .imgSection {
-  width: 78%;
+  width: 74%;
   height: auto;
   position: relative;
   top: -50px;
+  left: 91px;
 }
 
 .contPrincipal .cardHello h1 {
-  font-size: 45px;
-  color: rgb(34, 34, 34);
-  padding: 35px;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  padding-left: 35px;
+  padding-top: 170px;
 }
 
 .BarraLateral.close ~ .contPrincipal {
@@ -150,7 +154,8 @@ body {
   width: 90%;
   height: auto;
   display: grid;
-  grid-template-rows: repeat(1, 200px);
+  grid-template-rows: repeat(2, 2fr);
+  grid-gap: 15px;
 }
 
 .BarraLateral h1 {
@@ -190,10 +195,6 @@ body {
   border-radius: 15px;
 }
 
-.BarraLateral ul li a i {
-  font-size: 18px;
-}
-
 .BarraLateral #menu .logout nav ul li {
   border-top: 2px solid white;
   padding-top: 10px;
@@ -202,6 +203,133 @@ body {
 .BarraLateral ul li a:hover {
   background-color: #ff6600;
   color: white;
+}
+
+.contPrincipal .contgrid .contCards {
+  width: 96%;
+  height: auto;
+  position: relative;
+  left: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 20px;
+}
+
+.contPrincipal .contgrid .contCards .cardInfo {
+  width: 100%;
+  height: 200px;
+  border-radius: 25px;
+  background-color: #ff6600;
+  box-shadow: 2px 2px 10px -3px rgba(119, 119, 119, 0.53);
+  padding-left: 30px;
+  padding-top: 15px;
+  color: white;
+  font-size: 25px;
+
+  display: grid;
+  grid-template-rows: 2% 20%;
+  transition: 0.5s;
+}
+
+.contPrincipal .contgrid .contCards .cardInfo1 {
+  width: 100%;
+  height: 200px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 2px 2px 10px -3px rgba(119, 119, 119, 0.53);
+  padding-left: 30px;
+  padding-top: 15px;
+  color: #ff6600;
+  font-size: 25px;
+
+  display: grid;
+  grid-template-rows: 2% 20%;
+
+  transition: 0.5s;
+}
+
+.contPrincipal .contgrid .contCards .cardInfo2 {
+  width: 100%;
+  height: 200px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 2px 2px 10px -3px rgba(119, 119, 119, 0.53);
+  padding-left: 30px;
+  padding-top: 15px;
+  color: #ff6600;
+  font-size: 25px;
+
+  display: grid;
+  grid-template-rows: 2% 20%;
+  transition: 0.5s;
+}
+.contPrincipal .contgrid .contCards .cardInfo:hover,
+.contPrincipal .contgrid .contCards .cardInfo1:hover,
+.contPrincipal .contgrid .contCards .cardInfo2:hover {
+  height: 300px;
+  background-color: #ff6600;
+  color: white;
+}
+
+.contPrincipal .contgrid .contCards .cardInfo h2,
+.contPrincipal .contgrid .contCards .cardInfo1 h2,
+.contPrincipal .contgrid .contCards .cardInfo2 h2 {
+  font-size: 15px;
+}
+
+.contPrincipal .contgrid .contCards .cardInfo h1,
+.contPrincipal .contgrid .contCards .cardInfo1 h1,
+.contPrincipal .contgrid .contCards .cardInfo2 h1 {
+  font-size: 60px;
+}
+
+.contPrincipal .contCardRight {
+  width: 100%;
+  height: 400px;
+  margin-top: 110px;
+
+  display: grid;
+  grid-template-rows: repeat(3, 3fr);
+}
+
+.contPrincipal .contCardRight .cardRight {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  border-radius: 20px;
+
+  display: grid;
+  grid-template-columns: 74% 20%;
+  align-items: center;
+  box-shadow: 2px 2px 10px -3px rgba(119, 119, 119, 0.53);
+  transition: 0.5s;
+  border: 2px solid #d7d7d7;
+}
+
+.contPrincipal .contCardRight .cardRight:hover {
+  transform: scale(1.1);
+}
+
+.contPrincipal .contCardRight .cardRight .titlesCard {
+  display: grid;
+  grid-template-rows: repeat(2, 40px);
+  align-items: center;
+  padding-left: 20px;
+}
+
+.contPrincipal .contCardRight .cardRight .titlesCard h1 {
+  font-size: 25px;
+}
+
+.contPrincipal .contCardRight .cardRight .titlesCard h2 {
+  font-size: 15px;
+  color: #888;
+}
+
+.contPrincipal .contCardRight .cardRight h3 {
+  font-size: 30px;
+  text-align: right;
 }
 
 .WWList table {

@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{SITE_TITLE}}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href={{FONT_API}} />
+    <link rel="preconnect" href={{FONT_STATIC}} crossorigin />
     <link href={{FONT_FAMILY}} rel="stylesheet" />
     <link rel="stylesheet" href={{BASE_DIR}} />
-
-    <script src={{FONT_AWESOME_KIT}} crossorigin="anonymous"></script>
+    <script src={{FONT_AWESOME_KIT}}></script>
   </head>
 
   <body>
@@ -20,9 +20,8 @@
       </div>
       <nav id="menu">
         <ul>
-          <li><a href="index.php?page=index"><i
-                class="fa-solid fa-house"
-              ></i>Inicio</a></li>
+          <li><a href="index.php?page=index"><i class="fa-solid fa-house"></i>
+              Inicio</a></li>
           <li><a href="index.php?page=sec_login"><i
                 class="fas fa-sign-in-alt"
               ></i>
