@@ -382,6 +382,25 @@ footer hr {
   width: calc(98.4% - 100px);
 }
 
+/* Pantalla  Login */
+.contLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 142.9%;
+  height: 100vh;
+  background-color: #ff6600;
+}
+
+.contLogin .grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+/* Pantalla  Login */
+
 /*
 --sm: 640px;
   --md: 768px;
